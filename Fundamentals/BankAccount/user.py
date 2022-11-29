@@ -14,27 +14,23 @@ class User:
     print(self.email)
     print("Is rewards member: ", self.is_rewards_member)
     print("Gold card points: ", self.gold_card_points)
+    return self
 
   def enroll(self):
     self.is_rewards_member = True
     self.gold_card_points += 200
+    return self
 
   def spend_points(self, pointAmt):
     if self.gold_card_points - pointAmt >= 0:
       self.gold_card_points -= pointAmt
+      return self
 
 
 
-elvis = User('Elvis', 'Presley', "rip@outlook.com", "35")
-elvis.enroll()
-elvis.spend_points(20)
+elvis = User('Elvis', 'Presley', "rip@outlook.com", "35").enroll().spend_points(20).display_info()
 
-bigBird = User('Big', 'Bird', 'sesamestreet@bruh.com', "90")
-bigBird.enroll()
-bigBird.spend_points(80)
+bigBird = User('Big', 'Bird', 'sesamestreet@bruh.com', "90").enroll().spend_points(80).display_info()
 
-madonna = User('Mad', 'Onna', 'likeavirgin@nope.com', '65')
+madonna = User('Mad', 'Onna', 'likeavirgin@nope.com', '65').display_info()
 
-elvis.display_info()
-bigBird.display_info()
-madonna.display_info()
