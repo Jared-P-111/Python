@@ -11,7 +11,7 @@ pizza_toppings.append('Mushrooms') #access value
 print(person['name']) #access value
 person['name'] = 'George' #change value
 person['eye_color'] = 'blue' # add value
-print(fruit[2]) #
+print(fruit[2]) 
 
 if num1 > 45:
     print("It's greater")
