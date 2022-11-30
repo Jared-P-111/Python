@@ -1,6 +1,7 @@
 
 class User:
   def __init__(self, first_name, last_name, email, age):
+    #INSTANCE ATTRIBUTES
     self.first_name =  first_name
     self.last_name = last_name
     self.email = email
@@ -26,11 +27,38 @@ class User:
       self.gold_card_points -= pointAmt
       return self
 
+class BankAccount:
+    def __init__(self, balance = 0, int_rate = .9):
+        self.int_rate = int_rate
+        self.balance = balance
 
+    def deposit(self, amount):
+        self.balance += amount
+    def withdraw(self, amount):
+        self.balance -= amount
+    def display_account_info(self):
+        print("Balance: " + str(self.balance))
+    def yield_interest(self):
+        self.balance *= self.int_rate
+        return self
 
-elvis = User('Elvis', 'Presley', "rip@outlook.com", "35").enroll().spend_points(20).display_info()
+sean = BankAccount()
+mary = BankAccount()
 
-bigBird = User('Big', 'Bird', 'sesamestreet@bruh.com', "90").enroll().spend_points(80).display_info()
+sean.deposit(10)
+sean.display_account_info()
 
-madonna = User('Mad', 'Onna', 'likeavirgin@nope.com', '65').display_info()
+sean.deposit(10)
+sean.display_account_info()
 
+sean.deposit(10)
+sean.display_account_info()
+
+sean.yield_interest().display_account_info()
+
+mary.deposit(20)
+mary.withdraw(2)
+mary.withdraw(2)
+mary.withdraw(2)
+mary.withdraw(2)
+mary.yield_interest().display_account_info()
