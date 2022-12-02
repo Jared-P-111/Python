@@ -1,0 +1,33 @@
+* {
+  /* outline: 1px solid red; */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  margin-bottom: 100px;
+}
+
+.box-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  background-color: crimson;
+}
