@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" />
+    <title>Checker Board</title>
+  </head>
+  <body>
+    <div class="checker-board-container">
+      {% for y in range(0, rowHeight): %}
+      <div
+        class="checker-row"
+        style="{%if y % 2 == 0%}
+          transform: rotate(180deg)
+          {%endif%}
+        "
+      >
+        {% for x in range(0, rowLength): %}
+        <div
+          class="checker-square"
+          style="
+          {%if x % 2 == 0%}
+            background-color: {{color1}}
+          {%else%}
+            background-color: {{color2}}
+          {%endif%}
+        "
+        ></div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 1px solid crimson;
+}
+
+body {
+  background-color: rgb(235, 235, 235);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checker-board-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.checker-row {
+  display: flex;
+  height: 100px;
+}
+
+.checker-square {
+  display: flex;
+  width: 100px;
+  height: 100px;
+}
