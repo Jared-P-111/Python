@@ -11,7 +11,7 @@
     <h1>Welcome!</h1>
     <div class="box-container">
       {% for x in range(0, times): %}
-      <div class="box">Box {{ x + 1 }}</div>
+      <div class="box" style="background-color: {{color}};">Box {{ x + 1 }}</div>
       {% endfor %}
     </div>
   </body>
