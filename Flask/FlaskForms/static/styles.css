@@ -1,0 +1,17 @@
+* {
+  padding: 0;
+  margin: 30px;
+}
+
+.button {
+  display: block;
+  width: 115px;
+  height: 25px;
+  background: crimson;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  line-height: 25px;
+}

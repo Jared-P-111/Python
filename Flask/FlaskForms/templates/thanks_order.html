@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" />
+    <title>Your Order</title>
+  </head>
+  <body>
+    <h1>Your Order</h1>
+    <h1>Ship to: {{session['name']}}</h1>
+    <h1>Quantity: {{session['qty']}}x {{session['product']}}</h1>
+    <a href="/clear" class="button">Clear Cart</a>
+  </body>
+</html>
