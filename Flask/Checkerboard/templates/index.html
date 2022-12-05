@@ -13,20 +13,20 @@
       <div
         class="checker-row"
         style="{%if y % 2 == 0%}
-          transform: rotate(180deg)
-          {%endif%}
-        "
+            transform: rotate(180deg)
+            {%endif%}
+          "
       >
         {% for x in range(0, rowLength): %}
         <div
           class="checker-square"
           style="
-          {%if x % 2 == 0%}
-            background-color: {{color1}}
-          {%else%}
-            background-color: {{color2}}
-          {%endif%}
-        "
+            {%if x % 2 == 0%}
+              background-color: {{color1}}
+            {%else%}
+              background-color: {{color2}}
+            {%endif%}
+          "
         ></div>
         {% endfor %}
       </div>

@@ -1,0 +1,35 @@
+* {
+  /* outline: 1px solid red; */
+  color: white;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body h1 {
+  color: #fec008;
+}
+
+.survey-results {
+  width: 400px;
+  background-color: #33393e;
+  padding: 70px;
+}
+
+.survey-results h3 {
+  color: #fec008;
+}
+
+.form-container {
+  width: 400px;
+  background-color: #33393e;
+  padding: 70px;
+}
+
+.form-control option {
+  color: black;
+}

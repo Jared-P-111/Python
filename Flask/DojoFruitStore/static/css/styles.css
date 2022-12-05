@@ -1,15 +1,3 @@
 * {
   outline: 1px solid red;
 }
-
-.image-container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-.imgFruit {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
