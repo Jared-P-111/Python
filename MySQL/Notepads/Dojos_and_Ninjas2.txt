@@ -1,0 +1,21 @@
+JARED P, Adrian Lopez
+
+SELECT * FROM ninjas;
+
+INSERT INTO dojos(name)
+VALUES ('South park'), ('Los Angeles'), ('San Diego'); 
+SELECT * FROM dojos; 
+
+INSERT INTO ninjas(first_name, last_name, age, dojo_id)
+VALUES ('Elvis', 'Presley', 32, 12), ('Marilyn', 'Monroe', 22, 12), ('Michael', 'Jackson', 40, 12);
+
+INSERT INTO ninjas(first_name, last_name, age, dojo_id)
+VALUES ('Bob', 'Jeff', 32, 13), ('Kevin', 'Steve', 22, 13), ('Ricky', 'Bobby', 40, 13);
+
+INSERT INTO ninjas(first_name, last_name, age, dojo_id)
+VALUES ('Sarah', 'Tree', 32, 14), ('Bird', 'Cat', 22, 14), ('Laura', 'Jackson', 40, 14);
+
+
+
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM dojos;
