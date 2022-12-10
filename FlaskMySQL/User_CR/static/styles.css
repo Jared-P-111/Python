@@ -13,11 +13,23 @@ body {
   color: whitesmoke;
 }
 
+.home {
+  border: 1px solid #007bff;
+  padding: 10px;
+  border-radius: 10%;
+}
+
 .form-container {
   padding: 70px;
   background-color: rgb(33, 33, 33);
+  border-radius: 10%;
+}
+
+.form-container h1 {
+  margin-top: 30px;
 }
 
 #btn-submit {
   margin-top: 40px;
+  padding: 7px;
 }

@@ -1,4 +1,4 @@
-INSERT INTO ninjas(first_name, last_name, age) 
-VALUES("Jared", "Pisell", 41);
+SELECT * FROM users;
 
-SELECT * FROM ninjas;
+INSERT INTO users(first_name, last_name, email)
+VALUES('Samantha', 'Thompson', 'sthompson@gmail.com'), ('Janice', 'Pisell', 'jaffee@yahoo.com');
