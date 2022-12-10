@@ -24,7 +24,7 @@ class User:
           
       return users
     
-#* ============== CREATE VIEW (USER) ================
+#* ============== CREATE NEW USER =============
     
   @classmethod
   def create_user(cls, data):
@@ -33,6 +33,7 @@ class User:
       VALUES ("%(first_name)s", "%(last_name)s", "%(email)s")
     """
     
+    
     return connectToMySQL('users').query_db(query, data)
   
-#* ============== DELETE USER ====================
+#* ==============  ====================
