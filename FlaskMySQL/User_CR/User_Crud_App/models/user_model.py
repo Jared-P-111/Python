@@ -1,4 +1,4 @@
-from my_sql_connection import connectToMySQL
+from User_Crud_App.config.my_sql_connection import connectToMySQL
 
 
 class User:
