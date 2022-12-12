@@ -29,7 +29,7 @@ def userForm():
 #* CREATE USER GET FORM DATA FROM (ACTION)                  
 @app.route('/user/create', methods=["POST"])
 def form_data_create_user():
-  newUserData = request.form
+  newUserData = {**request.form}
   #* PASS DICTIONARY FROM request.form TO CLASS METHOD create_user
   newUser = User.create_user(newUserData)
   user = User.get_one_user(newUser)
