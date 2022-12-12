@@ -16,7 +16,6 @@ def readAll():
 @app.route('/user/<int:id>')
 def getUser(id):
   user = User.get_one_user(id)
-  print("USER ===========================>      ", user)
   return render_template("readOne.html", user=user)
 
 #* ================= SHOW FORM (VIEW) & CREATE USER (ACTION) =======================
@@ -30,11 +29,12 @@ def userForm():
 #* CREATE USER GET FORM DATA FROM (ACTION)                  
 @app.route('/user/create', methods=["POST"])
 def form_data_create_user():
-  
+  newUserData = request.form
   #* PASS DICTIONARY FROM request.form TO CLASS METHOD create_user
-  User.create_user(request.form)
+  newUser = User.create_user(newUserData)
+  user = User.get_one_user(newUser)
   
-  return redirect("/")
+  return render_template("readOne.html", user=user)
 
 #* =================== DELETE USER ======================
 
@@ -50,7 +50,9 @@ def deleteUser(id):
 
 @app.route('/user/edit/<int:id>')
 def edit_user_form(id):
-  return render_template("edit.html", id=id)
+  user = User.get_one_user(id)
+  print(user)
+  return render_template("edit.html", id=id, user=user)
 
 @app.route('/user/edit', methods=["POST"])
 def edit_user_data():

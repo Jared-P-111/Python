@@ -22,21 +22,17 @@
           <label for="fname">First Name:</label>
         </div>
         <div>
-          <input type="text" name="first_name" />
+          <input type="text" name="first_name" value="{{user[0]["first_name"]}}"/>
           <input type="hidden" value="{{id}}" name="id" />
         </div>
         <div>
           <label for="lname">Last Name:</label>
         </div>
-        <div>
-          <input type="text" name="last_name" />
-        </div>
+        <div><input type="text" name="last_name" value="{{user[0]["last_name"]}}"/></div>
         <div>
           <label for="email">email:</label>
         </div>
-        <div>
-          <input type="text" name="email" />
-        </div>
+        <div><input type="text" name="email" value="{{user[0]["email"]}}"/></div>
         <div>
           <button class="btn-danger">Apply</button>
         </div>
