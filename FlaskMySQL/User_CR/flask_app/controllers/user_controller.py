@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, session
-from User_Crud_App.models.user_model import User
-from User_Crud_App import app
+from flask_app.models.user_model import User
+from flask_app import app
 
 
 #* ================= HOME VIEW ==================
@@ -24,15 +24,14 @@ def userForm():
   User.get_all()
   return render_template("create.html")
 
-#* CREATE USER GET FORM DATA FROM (ACTION)                  
+#* CREATE USER GET FORM DATA FROM (ACTION) (Always redirect on a POST route! you could double charge a card)               
 @app.route('/user/create', methods=["POST"])
 def form_data_create_user():
   newUserData = {**request.form}
   #* PASS DICTIONARY FROM request.form TO CLASS METHOD create_user
-  newUser = User.create_user(newUserData)
-  user = User.get_one_user(newUser)
+  newUser = User.create_user(newUserData) #* <--- Remember mySqlconnection will return row id
   
-  return render_template("readOne.html", user=user)
+  return redirect(f'/user/{newUser}') 
 
 #* =================== DELETE USER ======================
 

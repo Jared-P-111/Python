@@ -1,4 +1,4 @@
-from User_Crud_App.config.my_sql_connection import connectToMySQL
+from flask_app.config.my_sql_connection import connectToMySQL
 
 
 class User:
