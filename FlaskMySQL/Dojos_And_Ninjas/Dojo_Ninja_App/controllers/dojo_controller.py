@@ -41,7 +41,7 @@ def newNinja():
 def ninjaData():
   new_ninja_data = {**request.form}
   Ninja.create_new(new_ninja_data)
-  #* print(new_ninja_data)
+  print("My data =========>>>> ", new_ninja_data)
   return redirect(f'/dojo/show/{new_ninja_data["dojo_id"]}')
 
 
