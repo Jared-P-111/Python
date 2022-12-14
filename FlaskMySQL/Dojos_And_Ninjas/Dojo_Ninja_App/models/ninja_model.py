@@ -9,6 +9,7 @@ class Ninja:
     self.age = data['age']
     self.created_at = data['created_at']
     self.updated_at = data['updated_at']
+    self.dojo_id = data['dojo_id']
     
   @classmethod
   def get_all_ninjas(cls):
@@ -26,11 +27,8 @@ class Ninja:
   @classmethod
   def create_new(cls, data):
     query = """
-      UPDATE users SET 
-        first_name = %(first_name)s, 
-        last_name = %(last_name)s,
-        email = %(email)s
-      WHERE id = %(id)s
+      INSERT INTO ninjas (first_name, last_name, age, dojo_id) 
+      VALUES (%(first_name)s, %(last_name)s, %(age)s, %(dojo_id)s);
     """
     newNinja = connectToMySQL(DATABASE).query_db(query, data)
     return newNinja

@@ -17,7 +17,7 @@
   <body>
     <div class="dojo-show-table-container">
       <div class="dojo-header">
-        <h2>{{ninjasFromDojo[0]['name']}} Dojo</h2>
+        <h2>{{ninjasFromDojo.name}} Dojo</h2>
         <small>(ninjas)</small>
       </div>
       <table class="table dojoTable">
@@ -25,17 +25,23 @@
           <tr>
             <th>Firstname</th>
             <th>Lastname</th>
-            <th>Email</th>
+            <th>Age</th>
           </tr>
         </thead>
         <tbody>
+          {% for ninja in ninjasFromDojo.ninjas %}
           <tr>
-            <td>{{ninjasFromDojo[0]["name"]}}</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
+            <td>{{ninja.first_name}}</td>
+            <td>{{ninja.last_name}}</td>
+            <td>{{ninja.age}}</td>
           </tr>
+          {% endfor %}
         </tbody>
       </table>
+      <div class="link-container">
+        <a href="/">Go Home</a>
+        <a href="/new/ninja">Add Ninja</a>
+      </div>
     </div>
   </body>
 </html>

@@ -14,36 +14,35 @@
     <title>New Ninja</title>
   </head>
   <body>
-    <h
     <div class="container">
       <form class="form-horizontal" action="/new/ninja/data" method="POST">
         <h1>New Ninja</h1>
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <label class="control-label">Select Dojo:</label>
-            <select class="form-select" name="dojos">
+            <select class="form-select" name="dojo_id">
               {% for dojo in currDojos %}
-                <option value="dojo">{{dojo["name"]}}</option>
+              <option name="dojo_id" value="{{dojo["id"]}}">{{dojo["name"]}}</option>
               {% endfor %}
             </select>
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label " for="email">First Name:</label>
+          <label class="control-label" for="email">First Name:</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="email" name="first_name"/>
+            <input type="text" class="form-control" id="email" name="first_name" />
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label " for="pwd">Last Name:</label>
+          <label class="control-label" for="pwd">Last Name:</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="pwd" name="last_name"/>
+            <input type="text" class="form-control" id="pwd" name="last_name" />
           </div>
         </div>
         <div class="form-group">
           <label class="control-label" for="pwd">Age:</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="pwd" name="age"/>
+            <input type="text" class="form-control" id="pwd" name="age" />
           </div>
         </div>
         <div class="form-group"></div>

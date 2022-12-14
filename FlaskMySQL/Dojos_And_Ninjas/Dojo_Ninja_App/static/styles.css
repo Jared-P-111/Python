@@ -80,3 +80,8 @@ body {
   justify-content: flex-end;
   color: #007bff;
 }
+
+.link-container {
+  display: flex;
+  justify-content: space-between;
+}

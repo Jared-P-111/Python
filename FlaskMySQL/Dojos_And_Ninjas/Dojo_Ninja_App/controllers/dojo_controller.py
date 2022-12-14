@@ -25,9 +25,10 @@ def showDojo(id):
   
   currId = { "id" : id }
   ninjasFromDojo = Dojo.get_all_ninjas_from_dojo(currId)
-  print(ninjasFromDojo)
+  
+  #* print("NINJAS FROM DOJO QUERY!!!!  =======> ",ninjasFromDojo)
+  
   return render_template("dojoShow.html", ninjasFromDojo=ninjasFromDojo)
-
 
 #* ============ NEW NINJA =============
 
@@ -39,8 +40,9 @@ def newNinja():
 @app.route('/new/ninja/data', methods=["POST"])
 def ninjaData():
   new_ninja_data = {**request.form}
-  print(new_ninja_data)
-  return redirect('/')
+  Ninja.create_new(new_ninja_data)
+  #* print(new_ninja_data)
+  return redirect(f'/dojo/show/{new_ninja_data["dojo_id"]}')
 
 
 
