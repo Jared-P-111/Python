@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="new-recipe" action="/new/recipe/data" method="POST">
+      <div class="recipes-outer-container">
+        <div class="recipes-container">
+          <div class="recipe-input-container">
+            <h1>Henlo, {{currUser["first_name"]}}
+            <h3>{{currRecipe[0]["recipe_name"]}}</h3>
+            <div class="form-group">
+              <label>Description</label>
+              <p>{{currRecipe[0]["description"]}}</p>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Instructions</label>
+              <p>{{currRecipe[0]["instructions"]}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-info-container">
+          <div>
+            <a href="/recipes">Recipes</a>
+            <a href="/logout">logout</a>
+          </div>
+          <div>
+            <h6>Date Cooked / Made</h6>
+            <h2>{{currRecipe[0]["date_cooked"]}}
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

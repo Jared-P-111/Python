@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* outline: 1px solid red; */
+}
+
+body {
+  margin: 0 auto;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  color: whitesmoke;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: left;
+  max-width: 500px;
+  padding: 50px;
+  border-radius: 10px;
+  background-color: #22252a;
+  margin-top: 300px;
+}
+
+.container h1 {
+  color: #007bff;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding-right: 50px;
+}
+
+.form-horizontal {
+  background-color: #22252a;
+}
+
+.form-container h1 {
+  width: fit-content;
+}
+
+.new-dojo-container h2 {
+  color: #007bff;
+}
+
+.form-group {
+  box-sizing: content-box;
+}
+
+.form-group p {
+  width: 200px;
+  margin-bottom: 5px;
+  color: ghostwhite;
+}
+
+#form-control-enter-city {
+  padding-top: 0;
+  justify-self: start;
+}
+
+.dojo-show-table-container {
+  padding: 30px;
+  background-color: #22252a;
+  border-radius: 10px;
+}
+
+.dojo-show-table-container h2 {
+  color: #007bff;
+}
+.dojoTable {
+  background-color: #22252a;
+}
+
+.dojo-header {
+  display: flex;
+  justify-content: flex-end;
+  color: #007bff;
+}
+
+.link-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login h1 {
+  color: #46b25e;
+}
+
+.rec-container {
+  min-width: 800px;
+}
+
+.recipes-outer-container {
+  background-color: #22252a;
+  border-radius: 10px;
+  display: flex;
+  margin-top: 300px;
+}
+
+.recipes-container {
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.recipe-input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-input-container h1 {
+  color: #007bff;
+}
+
+.recipe-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 30px;
+}
+
+.recipe-info-container h4 {
+  margin-top: 10px;
+}
+
+.new-recipe-btn {
+  margin-top: 20px;
+}
+
+.date-picker-container {
+  display: flex;
+  flex-direction: column;
+}

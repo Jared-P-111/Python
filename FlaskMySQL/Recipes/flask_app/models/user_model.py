@@ -18,32 +18,47 @@ class User:
     self.password = data['password']
     self.created_at = data['created_at']
     self.updated_at = data['updated_at']
-
-#🧈================ SAVE USER ===================
+    
+  @classmethod
+  def create_user(cls, data):
+    query = """
+      INSERT INTO users (first_name, last_name, email) 
+      VALUES (%(first_name)s, %(last_name)s, %(email)s)
+    """
+    return connectToMySQL('recipes_db').query_db(query, data)
+  
+  #🧈================ SAVE USER ===================
   @classmethod
   def save_user(cls, input):
     pw_hash = bcrypt.generate_password_hash(input["password"])
     input["password"] = pw_hash
     query = """INSERT INTO users (first_name, last_name, email, password)
     VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s);"""
-    
     user = connectToMySQL(DATABASE).query_db(query, input)
+    return user 
     
-    print("USER DATA ===============> ", user)
-    return user
-    
-#🧈================ GET ONE USER ================
+  #🧈================ GET USER BY ID ==============
+  @classmethod
+  def get_user_by_id(cls, input):
+    query = """SELECT * FROM users WHERE id = %(id)s"""
+    results = connectToMySQL(DATABASE).query_db(query, input)
+    print(f"RESULTS!!!!!!!!!!! {results}")
+    if results: #🍔<============ CHECK IF USER IN DB
+      user = cls(results[0]) #🍔<========= INSTANTIATE USER FROM DB
+      return user
+    else:
+      return False
+
+  #🧈================ GET ONE USER ================
   @classmethod
   def get_one_user(cls, input):
     query = """SELECT * FROM users WHERE email = %(email)s"""
     results = connectToMySQL(DATABASE).query_db(query, input)
-    print("RESULTS =========> ",results)
     
-    
-    if len(results) < 1: #🧈<============ CHECK IF USER IN DB
+    if len(results) < 1: #🍔<============ CHECK IF USER IN DB
       return False
     else:
-      user = cls(results[0]) #🧈<========= INSTANTIATE USER FROM DB
+      user = cls(results[0]) #🍔<========= INSTANTIATE USER FROM DB
       return user
 
 
@@ -74,8 +89,8 @@ class User:
         return is_valid
       
     return is_valid
-
-#🧈=============== VALIDATE REGISTRATION ==================
+  
+  #🧈=============== VALIDATE REGISTRATION ==================
   @staticmethod
   def validate_register(input):
     EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
@@ -99,14 +114,12 @@ class User:
     
     #🧈========== QUERY DB TO SEE IF EMAIL IS IN DB =========
     if input['email'] and is_email_valid:
-      currEmail = input['email']
-      query = """SELECT * FROM users WHERE email = %(currEmail)s"""
-      checkForEmail = connectToMySQL(DATABASE).query_db(query, currEmail)
+      query = """SELECT * FROM users WHERE email = %(email)s"""
+      checkForEmail = connectToMySQL(DATABASE).query_db(query, input)
       
-      #🧈======== AFTER QUERY RETURN CHECK TRUE =============
-      if checkForEmail == False:
-        flash("That email is in use", "register_error")
-        is_valid = False
+      if len(checkForEmail) > 0:
+        flash("Not valid entries", "register_error")
+        is_valid = False      
       
       #🧈======== CHECK REGEX FOR VALID EMAIL ===============
       if not is_email_valid:
@@ -122,7 +135,5 @@ class User:
     if input['password'] != input['confirm_password']:
       flash("Your passwords do not match", "register_error")
       is_valid = False
-    
-      print("Validate Register ===========> ", is_valid)
       
     return is_valid
